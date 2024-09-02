@@ -1,5 +1,10 @@
 # Welcome to the Bingeflix Data Team
 
+## WEEK 1
+### Why did I resolve the warnings as I did?
+- I don't know what the data timeliness will be and when it will be updated through the course
+- The single DAG constraint doesn't seem to match the data model, at least not yet
+
 ### Coding Conventions
 #### General
 - Use UPPER case for all keywords
