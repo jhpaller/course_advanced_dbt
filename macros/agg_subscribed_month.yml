@@ -1,0 +1,16 @@
+macros:
+  - name: agg_subscribed_month
+    description: Performs the aggregate with windowing function to reduce code duplication. No order clause, so ensure the aggregate function used is deterministic without
+    arguments:
+      - name: agg_func
+        type: string
+        description: aggregate function to use, must be deterministic without ordering
+      - name: subscribed_flag
+        type: string
+        description: the field used to check if the user is subscribed
+      - name: date_field
+        type: string
+        description: the date field to utilize if the user is subscribed
+      - name: partition_by
+        type: string
+        description: partition by clause, supports multi column clause as long as it is comma separated, with or withought sorting direction
