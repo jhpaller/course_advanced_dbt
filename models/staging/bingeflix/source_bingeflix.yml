@@ -8,140 +8,86 @@ sources:
         description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
         columns:
           - name: session_id
-            description: The unique identifier of the session in the Bingeflix application.
-            data_tests:
-              - not_null
+            description: The unique identifier of the session in the Bingeflix application. Not null, tests applied in staging model.
 
           - name: created_at
-            description: When the event was logged.
-            data_tests:
-              - not_null
+            description: When the event was logged. Not null, tests applied in staging model.
 
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
-            data_tests:
-              - not_null
+            description: '{{ doc("bingeflix_column_user_id") }} Not null, tests applied in staging model.'
 
           - name: event_name
-            description: The name of the event.
-            data_tests:
-              - not_null
+            description: The name of the event. Not null, tests applied in staging model.
 
           - name: event_id
-            description: The unique identifier of the event.
-            data_tests:
-              - not_null
-              - unique
+            description: The unique identifier of the event. Not null and unique, tests applied in staging model.
 
       - name: subscription_plans
         description: This table contains information about various subscription plans available on Bingeflix.
         columns:
           - name: subscription_plan_id
-            description: The unique identifier of the subscription plan.
-            data_tests:
-              - not_null
-              - unique
-              - accepted_values:
-                  values: [1, 2, 3]
+            description: The unique identifier of the subscription plan. Not null, unique and accepted value, tests applied in staging model.
 
           - name: plan_name
-            description: The name of the subscription plan.
-            data_tests:
-              - not_null
+            description: The name of the subscription plan. Not null, tests applied in staging model.
 
           - name: pricing
-            description: The price of the subscription.
-            data_tests:
-              - not_null
+            description: The price of the subscription. Not null, tests applied in staging model.
 
           - name: payment_period
-            description: The recurring payment period for the subscription.
-            data_tests:
-              - not_null
+            description: The recurring payment period for the subscription. Not null, tests applied in staging model.
 
 
       - name: subscriptions
         description: This model contains information about Bingeflix subscriptions.
         columns:
           - name: subscription_plan_id
-            description: The subscription identifier.
-            data_tests:
-              - not_null
+            description: The subscription identifier. Not null, tests applied in staging model.
 
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
-            data_tests:
-              - not_null
+            description: '{{ doc("bingeflix_column_user_id") }} Not null, tests applied in staging model.'
 
           - name: starts_at
-            description: When the subscription started.
-            data_tests:
-              - not_null
+            description: When the subscription started. Not null, tests applied in staging model.
 
           - name: ends_at
             description: When the subscription ends. This value is NULL if the subscription is active.
 
           - name: subscription_id
-            description: The unique identifier for the subscription.
-            data_tests:
-              - not_null
-              - unique
+            description: The unique identifier for the subscription. Not null and unique, tests applied in staging model.
 
       - name: users
         description: "This is table contains information about Bingeflix users."
         columns:
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
-            data_tests:
-              - not_null
-              - unique
+            description: '{{ doc("bingeflix_column_user_id") }} Not null and unique, tests applied in staging model.'
 
           - name: created_at
-            description: When the user was created.
-            data_tests:
-              - not_null
+            description: When the user was created. Not null, tests applied in staging model.
 
           - name: phone_number
-            description: The user's phone number.
-            data_tests:
-              - not_null
+            description: The user's phone number. Not null, tests applied in staging model.
 
           - name: deleted_at
             description: When the user's account was deleted. The value is NULL if the account has not been deleted.
 
           - name: username
-            description: The username for login to Bingeflix.
-            data_tests:
-              - not_null
+            description: The username for login to Bingeflix. Not null, tests applied in staging model.
 
           - name: name
-            description: The name of the user.
-            data_tests:
-              - not_null
+            description: The name of the user. Not null, tests applied in staging model.
 
           - name: sex
-            description: The user's sex at birth.
-            data_tests:
-              - not_null
-              - accepted_values:
-                  values: ['M','F']
+            description: The user's sex at birth. Not null and accepted value, tests applied in staging model.
 
           - name: email
-            description: The user's email address.
-            data_tests:
-              - not_null
+            description: The user's email address. Not null, tests applied in staging model.
 
           - name: birthdate
-            description: The user's birthdate.
-            data_tests:
-              - not_null
+            description: The user's birthdate. Not null, tests applied in staging model.
 
           - name: region
-            description: Where the user resides (i.e. the state or province).
-            data_tests:
-              - not_null
+            description: Where the user resides (i.e. the state or province). Not null, tests applied in staging model.
 
           - name: country
-            description: Where the user resides.
-            data_tests:
-              - not_null
+            description: Where the user resides. Not null, tests applied in staging model.
